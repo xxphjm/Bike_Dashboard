@@ -82,36 +82,8 @@ const App = () => {
   //       });
   //   }
   // };
-  // const handleGetConnectedDevices = () => {
-  //   BleManager.getConnectedPeripherals([]).then(results => {
-  //     if (results.length == 0) {
-  //       console.log('No connected bluetooth devices');
-  //     } else {
-  //       for (let i = 0; i < results.length; i++) {
-  //         let peripheral = results[i];
-  //         peripheral.connected = true;
-  //         peripherals.set(peripheral.id, peripheral);
-  //         setConnected(true);
-  //         setBluetoothDevices(Array.from(peripherals.values()));
-  //       }
-  //     }
-  //   });
-  // };
 
-  // useEffect(() => {
-  //   // ...其他初始化代碼
-  
-  //   // 設置接收通知的監聽器
-  //   const notificationListener = BleManagerEmitter.addListener('BleManagerDidUpdateValueForCharacteristic', data => {
-  //     console.log('Received data:', data.value);
-  //     // 在這裡處理接收到的數據
-  //   });
-  
-  //   // 返回一個清理函數，以便在組件卸載時刪除監聽器
-  //   return () => {
-  //     notificationListener.remove();
-  //   };
-  // }, []);
+
 
   return (
     <View style={styles.container}>
@@ -122,7 +94,7 @@ const App = () => {
       <View style={styles.content} >
         <Content />
         <Mqttserver message={'kjhkh'} />
-        {/* <Button title="訂閱" onPress={sendMessage} /> */}
+
         {/* <Button title="搜尋" onPress={startScan} /> */}
         {/* <Button title="Check Bluetooth Permission" onPress={checkBluetoothPermission} /> */}
       {/* <Button title="Request Bluetooth Permission" onPress={requestBluetoothPermission} /> */}
