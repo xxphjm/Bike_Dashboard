@@ -29,64 +29,64 @@ const BleManagerEmitter = new NativeEventEmitter(BleManagerModule);
 
 
 const App = () => {
-  const [isScanning, setIsScanning] = useState(false);
-  const [permissionStatus, setPermissionStatus] = useState(null);
-  useEffect(() => {
-    // turn on bluetooth if it is not on
-    BleManager.enableBluetooth().then(() => {
-      console.log('Bluetooth is turned on!');
-    });
+  // const [isScanning, setIsScanning] = useState(false);
+  // const [permissionStatus, setPermissionStatus] = useState(null);
+  // useEffect(() => {
+  //   // turn on bluetooth if it is not on
+  //   BleManager.enableBluetooth().then(() => {
+  //     console.log('Bluetooth is turned on!');
+  //   });
 
 
-    BleManager.start({ showAlert: false }).then(() => {
-      console.log('BleManager initialized');
-    });
-    let stopListener = BleManagerEmitter.addListener(
-      'BleManagerStopScan',
-      () => {
-        setIsScanning(false);
-        BleManager.getConnectedPeripherals([]).then((connectedDevices) => {
-          console.log('Connected devices:', connectedDevices);
-          // Update your state or perform other actions as needed
-        }).catch((error) => {
-          console.error('Error getting connected devices:', error);
-        });
-        console.log('Scan is stopped');
-      },
-    );
+  //   BleManager.start({ showAlert: false }).then(() => {
+  //     console.log('BleManager initialized');
+  //   });
+  //   let stopListener = BleManagerEmitter.addListener(
+  //     'BleManagerStopScan',
+  //     () => {
+  //       setIsScanning(false);
+  //       BleManager.getConnectedPeripherals([]).then((connectedDevices) => {
+  //         console.log('Connected devices:', connectedDevices);
+  //         // Update your state or perform other actions as needed
+  //       }).catch((error) => {
+  //         console.error('Error getting connected devices:', error);
+  //       });
+  //       console.log('Scan is stopped');
+  //     },
+  //   );
 
-    checkBluetoothPermission();
-  }, []);
+  //   checkBluetoothPermission();
+  // }, []);
 
   
-  const checkBluetoothPermission = async () => {
-    const status = await check(PERMISSIONS.ANDROID.BLUETOOTH_CONNECT);
-    if (status !== 'granted') {
-      status = await request(PERMISSIONS.ANDROID.BLUETOOTH_CONNECT);
-    }
-    else {
+  // const checkBluetoothPermission = async () => {
+  //   const status = await check(PERMISSIONS.ANDROID.BLUETOOTH_CONNECT);
+  //   if (status !== 'granted') {
+  //     status = await request(PERMISSIONS.ANDROID.BLUETOOTH_CONNECT);
+  //   }
+  //   else {
 
-      setPermissionStatus(status);
-    }
-    console.log(status);
-  };
+  //     setPermissionStatus(status);
+  //   }
+  //   console.log(status);
+  // };
 
 
-  const startScan = () => {
-    if (!isScanning) {
+  // const startScan = () => {
+  //   if (!isScanning) {
 
-      BleManager.scan([], 5, true)
-        .then((e) => {
+  //     BleManager.scan([], 5, true)
+  //       .then((e) => {
 
-          console.log('Scanning...');
-          // setIsScanning(true);
-        })
-        .catch(error => {
-          console.log('error');
-          console.error(error);
-        });
-    }
-  };
+  //         console.log('Scanning...');
+  //         // setIsScanning(true);
+  //       })
+  //       .catch(error => {
+  //         console.log('error');
+  //         console.error(error);
+  //       });
+  //   }
+  // };
 
   return (
     <View style={styles.container}>
@@ -98,7 +98,7 @@ const App = () => {
         <Content />
         <Mqttserver message={'kjhkh'} />
 
-        <Button title="搜尋" onPress={startScan} />
+        {/* <Button title="搜尋" onPress={startScan} /> */}
         {/* <Button title="Check Bluetooth Permission" onPress={checkBluetoothPermission} /> */}
       {/* <Button title="Request Bluetooth Permission" onPress={requestBluetoothPermission} /> */}
         {/* {permissionStatus && <Text>You have {permissionStatus} Bluetooth permission.</Text>} */}
