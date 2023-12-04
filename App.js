@@ -19,17 +19,10 @@ import {
 
 import Navbar from "./src/pages/navbar";
 import Content from "./src/pages/content";
-import BleManager from 'react-native-ble-manager';
-import Mqttserver from './src/back/mqtt';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import init from 'react_native_mqtt';
-import { check, request, PERMISSIONS } from 'react-native-permissions';
-import Bluetooth from './src/back/bluetooth';
+
 import Geolocation from '@react-native-community/geolocation';
 import Request from './src/back/request';
 import Qs from 'qs';
-const BleManagerModule = NativeModules.BleManager;
-const BleManagerEmitter = new NativeEventEmitter(BleManagerModule);
 
 
 
@@ -38,44 +31,46 @@ const App = () => {
   const [longitude, setLongitude] = useState(null);
   const [time, setTime] = useState(null);
   const [speed, setSpeed] = useState(null);
-
+  const [urlString, setUrlString] = useState('172.20.10.8');
+const [url,setUrl]=useState('172.20.10.8')
   const[messages,setMessages]=useState('');
   useEffect(() => {
     const intervalId = setInterval(() => {
       Geolocation.getCurrentPosition(
         position => {
-        
+          console.log(position)
           const { latitude, longitude,speed } = position.coords;
           setLatitude(latitude);
           setLongitude(longitude);
           setTime(position.timestamp)
-          setSpeed(speed)
           let data={
             latitude: latitude,
             longitude: longitude,
             speed:speed,
           }
-
-          Request().post('/data',JSON.stringify(data)).then(res => {
+          Request(url).post('/data',JSON.stringify(data)).then(res => {
             // setMessages(JSON.stringify(res.data));
+
         
           }).catch(err => {
             setMessages(JSON.stringify(err));
+            console.log(JSON.stringify(err));
           })
         },
         error => {
           console.error(error);
         },
-        { enableHighAccuracy:true, timeout: 20000, maximumAge: 1000 }
+        { enableHighAccuracy: false, timeout: 20000, maximumAge: 1000 }
       );
-
     }, 1000);
 
-      return () => {
-        clearInterval(intervalId);
-      };
-    }, [url]);
-
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [url]);
+  const handleButtonPress=()=>{
+    setUrl(urlString);
+  }
   return (
     <View style={styles.container}>
       <StatusBar hidden={true} />
@@ -84,7 +79,7 @@ const App = () => {
       </View>
       <View style={styles.content} >
         <Content speed={speed} />
-        {/* <TextInput
+        <TextInput
         style={{ height: 40, borderColor: 'gray', borderWidth: 1, marginBottom: 10, padding: 10 }}
         placeholder="輸入url"
         value={urlString}
@@ -93,8 +88,8 @@ const App = () => {
       />
       <Button
         title="送出"
-        onPress={handleButtonPress} */}
-      {/* /> */}
+        onPress={handleButtonPress}
+      />
       {/* <Text>message:{messages}</Text> */}
         {/* <Mqttserver message={'kjhkh'} /> */}
 
