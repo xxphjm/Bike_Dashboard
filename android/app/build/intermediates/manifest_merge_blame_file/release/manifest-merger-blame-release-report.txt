@@ -1,0 +1,142 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.bike_dashboard"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="33" />
+9-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission
+11-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:3:4-4:51
+12        android:name="android.permission.BLUETOOTH"
+12-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:3:21-64
+13        android:maxSdkVersion="30" />
+13-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:4:22-48
+14    <uses-permission
+14-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:5:5-6:51
+15        android:name="android.permission.BLUETOOTH_ADMIN"
+15-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:5:22-71
+16        android:maxSdkVersion="30" />
+16-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:6:22-48
+17    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+17-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:8:5-73
+17-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:8:22-70
+18    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+18-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:11:5-78
+18-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:11:22-75
+19    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+19-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:14:5-76
+19-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:14:22-73
+20    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+20-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:18:5-81
+20-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:18:22-78
+21
+22    <uses-permission-sdk-23 android:name="android.permission.ACCESS_FINE_LOCATION" />
+22-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:19:5-86
+22-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:19:29-83
+23
+24    <uses-permission android:name="android.permission.INTERNET" />
+24-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:20:5-67
+24-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:20:22-64
+25
+26    <uses-feature
+26-->[:react-native-ble-manager] /Users/xxphjm/專題/bike_Dashboard/node_modules/react-native-ble-manager/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:11:5-13:36
+27        android:name="android.hardware.bluetooth_le"
+27-->[:react-native-ble-manager] /Users/xxphjm/專題/bike_Dashboard/node_modules/react-native-ble-manager/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:12:9-53
+28        android:required="false" />
+28-->[:react-native-ble-manager] /Users/xxphjm/專題/bike_Dashboard/node_modules/react-native-ble-manager/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:13:9-33
+29
+30    <application
+30-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:23:5-44:19
+31        android:name="com.bike_dashboard.MainApplication"
+31-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:25:7-38
+32        android:allowBackup="false"
+32-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:29:7-34
+33        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+33-->[androidx.core:core:1.7.0] /Users/xxphjm/.gradle/caches/transforms-3/75e4635b66fa4e4e84e71b52579837ce/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
+34        android:icon="@mipmap/ic_launcher"
+34-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:27:7-41
+35        android:label="@string/app_name"
+35-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:26:7-39
+36        android:networkSecurityConfig="@xml/network_security_config"
+36-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:24:7-67
+37        android:roundIcon="@mipmap/ic_launcher_round"
+37-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:28:7-52
+38        android:theme="@style/AppTheme" >
+38-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:30:7-38
+39        <activity
+39-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:32:7-43:18
+40            android:name="com.bike_dashboard.MainActivity"
+40-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:33:9-37
+41            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+41-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:35:9-118
+42            android:exported="true"
+42-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:38:9-32
+43            android:label="@string/app_name"
+43-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:34:9-41
+44            android:launchMode="singleTask"
+44-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:36:9-40
+45            android:windowSoftInputMode="adjustResize" >
+45-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:37:9-51
+46            <intent-filter>
+46-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:39:9-42:25
+47                <action android:name="android.intent.action.MAIN" />
+47-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:40:13-65
+47-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:40:21-62
+48
+49                <category android:name="android.intent.category.LAUNCHER" />
+49-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:41:13-73
+49-->/Users/xxphjm/專題/bike_Dashboard/android/app/src/main/AndroidManifest.xml:41:23-70
+50            </intent-filter>
+51        </activity>
+52        <activity
+52-->[com.google.android.gms:play-services-base:18.1.0] /Users/xxphjm/.gradle/caches/transforms-3/7bc2107a0f24dde54b783ba4b64ec0fd/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:20:9-22:45
+53            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+53-->[com.google.android.gms:play-services-base:18.1.0] /Users/xxphjm/.gradle/caches/transforms-3/7bc2107a0f24dde54b783ba4b64ec0fd/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:20:19-85
+54            android:exported="false"
+54-->[com.google.android.gms:play-services-base:18.1.0] /Users/xxphjm/.gradle/caches/transforms-3/7bc2107a0f24dde54b783ba4b64ec0fd/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:22:19-43
+55            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+55-->[com.google.android.gms:play-services-base:18.1.0] /Users/xxphjm/.gradle/caches/transforms-3/7bc2107a0f24dde54b783ba4b64ec0fd/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:21:19-78
+56
+57        <meta-data
+57-->[com.google.android.gms:play-services-basement:18.1.0] /Users/xxphjm/.gradle/caches/transforms-3/bf9b6fb405d2f7fd8250171739588e78/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
+58            android:name="com.google.android.gms.version"
+58-->[com.google.android.gms:play-services-basement:18.1.0] /Users/xxphjm/.gradle/caches/transforms-3/bf9b6fb405d2f7fd8250171739588e78/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
+59            android:value="@integer/google_play_services_version" />
+59-->[com.google.android.gms:play-services-basement:18.1.0] /Users/xxphjm/.gradle/caches/transforms-3/bf9b6fb405d2f7fd8250171739588e78/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
+60
+61        <provider
+61-->[androidx.emoji2:emoji2:1.0.0] /Users/xxphjm/.gradle/caches/transforms-3/223146ef33e3aa619e8b04649706e145/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
+62            android:name="androidx.startup.InitializationProvider"
+62-->[androidx.emoji2:emoji2:1.0.0] /Users/xxphjm/.gradle/caches/transforms-3/223146ef33e3aa619e8b04649706e145/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
+63            android:authorities="com.bike_dashboard.androidx-startup"
+63-->[androidx.emoji2:emoji2:1.0.0] /Users/xxphjm/.gradle/caches/transforms-3/223146ef33e3aa619e8b04649706e145/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
+64            android:exported="false" >
+64-->[androidx.emoji2:emoji2:1.0.0] /Users/xxphjm/.gradle/caches/transforms-3/223146ef33e3aa619e8b04649706e145/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
+65            <meta-data
+65-->[androidx.emoji2:emoji2:1.0.0] /Users/xxphjm/.gradle/caches/transforms-3/223146ef33e3aa619e8b04649706e145/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+66                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+66-->[androidx.emoji2:emoji2:1.0.0] /Users/xxphjm/.gradle/caches/transforms-3/223146ef33e3aa619e8b04649706e145/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
+67                android:value="androidx.startup" />
+67-->[androidx.emoji2:emoji2:1.0.0] /Users/xxphjm/.gradle/caches/transforms-3/223146ef33e3aa619e8b04649706e145/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
+68            <meta-data
+68-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/xxphjm/.gradle/caches/transforms-3/d5d05479173d466a6bd0989b3b3e5ef4/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
+69                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+69-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/xxphjm/.gradle/caches/transforms-3/d5d05479173d466a6bd0989b3b3e5ef4/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
+70                android:value="androidx.startup" />
+70-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/xxphjm/.gradle/caches/transforms-3/d5d05479173d466a6bd0989b3b3e5ef4/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
+71        </provider>
+72
+73        <meta-data
+73-->[com.facebook.soloader:soloader:0.10.5] /Users/xxphjm/.gradle/caches/transforms-3/ec3312a013bd7d8a70466a1977a1dba4/transformed/jetified-soloader-0.10.5/AndroidManifest.xml:12:9-14:37
+74            android:name="com.facebook.soloader.enabled"
+74-->[com.facebook.soloader:soloader:0.10.5] /Users/xxphjm/.gradle/caches/transforms-3/ec3312a013bd7d8a70466a1977a1dba4/transformed/jetified-soloader-0.10.5/AndroidManifest.xml:13:13-57
+75            android:value="false" />
+75-->[com.facebook.soloader:soloader:0.10.5] /Users/xxphjm/.gradle/caches/transforms-3/ec3312a013bd7d8a70466a1977a1dba4/transformed/jetified-soloader-0.10.5/AndroidManifest.xml:14:13-34
+76    </application>
+77
+78</manifest>
