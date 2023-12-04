@@ -38,8 +38,7 @@ const App = () => {
   const [longitude, setLongitude] = useState(null);
   const [time, setTime] = useState(null);
   const [speed, setSpeed] = useState(null);
-  const [url,setUrl]=useState("172.20.10.8")
-  const[urlString,setUrlString]=useState("172.20.10.8");
+
   const[messages,setMessages]=useState('');
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -57,7 +56,7 @@ const App = () => {
             speed:speed,
           }
 
-          Request(url).post('/data',JSON.stringify(data)).then(res => {
+          Request().post('/data',JSON.stringify(data)).then(res => {
             // setMessages(JSON.stringify(res.data));
         
           }).catch(err => {
@@ -87,7 +86,7 @@ setUrl(urlString)
       </View>
       <View style={styles.content} >
         <Content speed={speed} />
-        <TextInput
+        {/* <TextInput
         style={{ height: 40, borderColor: 'gray', borderWidth: 1, marginBottom: 10, padding: 10 }}
         placeholder="輸入url"
         value={urlString}
@@ -96,8 +95,8 @@ setUrl(urlString)
       />
       <Button
         title="送出"
-        onPress={handleButtonPress}
-      />
+        onPress={handleButtonPress} */}
+      {/* /> */}
       {/* <Text>message:{messages}</Text> */}
         {/* <Mqttserver message={'kjhkh'} /> */}
 
