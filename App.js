@@ -75,9 +75,7 @@ const App = () => {
         clearInterval(intervalId);
       };
     }, [url]);
-const handleButtonPress=()=>{
-setUrl(urlString)
-}
+
   return (
     <View style={styles.container}>
       <StatusBar hidden={true} />
