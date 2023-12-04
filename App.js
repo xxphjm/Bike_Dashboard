@@ -30,28 +30,29 @@ const App = () => {
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
   const [time, setTime] = useState(null);
-  const [speed, setSpeed] = useState(null);
+  const [speed, setSpeed] = useState(0);
   const [urlString, setUrlString] = useState('172.20.10.8');
-const [url,setUrl]=useState('172.20.10.8')
-  const[messages,setMessages]=useState('');
+  const [url, setUrl] = useState('172.20.10.8')
+  const [messages, setMessages] = useState('');
   useEffect(() => {
     const intervalId = setInterval(() => {
       Geolocation.getCurrentPosition(
         position => {
-          console.log(position)
-          const { latitude, longitude,speed } = position.coords;
+          const { latitude, longitude, speed } = position.coords;
+          console.log(position);
           setLatitude(latitude);
           setLongitude(longitude);
           setTime(position.timestamp)
-          let data={
+          setSpeed(speed);
+          let data = {
             latitude: latitude,
             longitude: longitude,
-            speed:speed,
+            speed: speed,
           }
-          Request(url).post('/data',JSON.stringify(data)).then(res => {
+          Request(url).post('/data', JSON.stringify(data)).then(res => {
             // setMessages(JSON.stringify(res.data));
 
-        
+
           }).catch(err => {
             setMessages(JSON.stringify(err));
             console.log(JSON.stringify(err));
@@ -68,7 +69,7 @@ const [url,setUrl]=useState('172.20.10.8')
       clearInterval(intervalId);
     };
   }, [url]);
-  const handleButtonPress=()=>{
+  const handleButtonPress = () => {
     setUrl(urlString);
   }
   return (
@@ -80,22 +81,22 @@ const [url,setUrl]=useState('172.20.10.8')
       <View style={styles.content} >
         <Content speed={speed} />
         <TextInput
-        style={{ height: 40, borderColor: 'gray', borderWidth: 1, marginBottom: 10, padding: 10 }}
-        placeholder="輸入url"
-        value={urlString}
-        onChangeText={(e)=>setUrlString(e)}
+          style={{ height: 40, borderColor: 'gray', borderWidth: 1, marginBottom: 10, padding: 10 }}
+          placeholder="輸入url"
+          value={urlString}
+          onChangeText={(e) => setUrlString(e)}
         // ref={(input) => setUrl(input)}
-      />
-      <Button
-        title="送出"
-        onPress={handleButtonPress}
-      />
-      {/* <Text>message:{messages}</Text> */}
+        />
+        <Button
+          title="送出"
+          onPress={handleButtonPress}
+        />
+        {/* <Text>message:{messages}</Text> */}
         {/* <Mqttserver message={'kjhkh'} /> */}
 
         {/* <Button title="搜尋" onPress={startScan} /> */}
         {/* <Button title="Check Bluetooth Permission" onPress={checkBluetoothPermission} /> */}
-      {/* <Button title="Request Bluetooth Permission" onPress={requestBluetoothPermission} /> */}
+        {/* <Button title="Request Bluetooth Permission" onPress={requestBluetoothPermission} /> */}
         {/* {permissionStatus && <Text>You have {permissionStatus} Bluetooth permission.</Text>} */}
         {/* <Bluetooth /> */}
       </View>
