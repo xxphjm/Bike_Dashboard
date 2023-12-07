@@ -10,8 +10,6 @@ import {
   View,
   Text,
   StatusBar,
-  NativeModules,
-  NativeEventEmitter,
   Button,
   Alert,
   TextInput
@@ -30,7 +28,7 @@ const App = () => {
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
   const [time, setTime] = useState(null);
-  const [speed, setSpeed] = useState(0);
+  const [speedTest, setSpeed] = useState(0);
   const [urlString, setUrlString] = useState('172.20.10.8');
   const [url, setUrl] = useState('172.20.10.8')
   const [messages, setMessages] = useState('');
@@ -43,12 +41,13 @@ const App = () => {
           setLatitude(latitude);
           setLongitude(longitude);
           setTime(position.timestamp)
-          setSpeed(speed);
+          setSpeed(speed*3.6.toFixed(2));
           let data = {
             latitude: latitude,
             longitude: longitude,
-            speed: speed,
+            speed: speed*3.6.toFixed(2),
           }
+ 
           Request(url).post('/data', JSON.stringify(data)).then(res => {
             // setMessages(JSON.stringify(res.data));
 
@@ -61,7 +60,7 @@ const App = () => {
         error => {
           console.error(error);
         },
-        { enableHighAccuracy: false, timeout: 20000, maximumAge: 1000 }
+        { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
       );
     }, 1000);
 
@@ -72,6 +71,7 @@ const App = () => {
   const handleButtonPress = () => {
     setUrl(urlString);
   }
+  console.log(speedTest);
   return (
     <View style={styles.container}>
       <StatusBar hidden={true} />
@@ -79,8 +79,8 @@ const App = () => {
         <Navbar />
       </View>
       <View style={styles.content} >
-        <Content speed={speed} />
-        <TextInput
+        <Content speed={speedTest} />
+        {/* <TextInput
           style={{ height: 40, borderColor: 'gray', borderWidth: 1, marginBottom: 10, padding: 10 }}
           placeholder="輸入url"
           value={urlString}
@@ -90,7 +90,7 @@ const App = () => {
         <Button
           title="送出"
           onPress={handleButtonPress}
-        />
+        /> */}
         {/* <Text>message:{messages}</Text> */}
         {/* <Mqttserver message={'kjhkh'} /> */}
 

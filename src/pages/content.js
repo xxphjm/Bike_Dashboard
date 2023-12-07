@@ -6,7 +6,7 @@ const Content=({speed})=>{
 return(
 <View style={styles.container}>
 <Text style={{fontWeight:600,fontSize:78}}>KKH-1000</Text>
-<Text style={{fontSize:48}} >{speed}m/s</Text>
+<Text style={{fontSize:48}} >{speed}km/h</Text>
 </View>
 )
 }
